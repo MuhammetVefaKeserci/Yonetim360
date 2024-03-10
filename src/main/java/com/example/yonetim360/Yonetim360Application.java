@@ -32,10 +32,7 @@ public class Yonetim360Application {
     public ResponseEntity<?> downloadImage(@PathVariable String fileName) {
            byte[] imageData = service.downloadImage(fileName);
            return ResponseEntity.status(HttpStatus.OK)
-                   .contentType(MediaType.valueOf("image/png"))
                    .contentType(MediaType.asMediaType(MimeType.valueOf("video/mp4")))
-                   .contentType(MediaType.parseMediaType("text/plain"))
-                   .contentType(MediaType.parseMediaType("audio/mpeg"))
                    .body(imageData);
 
     }
