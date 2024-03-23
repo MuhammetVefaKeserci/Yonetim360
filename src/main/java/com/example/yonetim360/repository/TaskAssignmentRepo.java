@@ -16,6 +16,7 @@ public interface TaskAssignmentRepo extends JpaRepository<Beykoz, Long> {
     @Query(value = "SELECT is_deleted FROM Beykoz WHERE id = :id", nativeQuery = true)
     Boolean getResultLists(Long id);
 
+
     @Modifying
     @Query(value = "UPDATE Beykoz SET is_deleted = true WHERE id = :id", nativeQuery = true)
     void deleteByIsDeletedFalse(@Param("id") Long id);
